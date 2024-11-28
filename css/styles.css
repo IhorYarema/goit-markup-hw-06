@@ -74,7 +74,7 @@ textarea {
 /*header*/
 .page-header {
   border-bottom: 1px solid #e7e9fc;
-  display: flex;
+
   justify-content: center;
   /*Shadow*/
   box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
@@ -139,7 +139,7 @@ textarea {
 
 .page-menu .link {
   color: #2e2f42;
-  padding: 24px 0;
+  padding: 0;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
 }
@@ -188,7 +188,6 @@ textarea {
   z-index: 999;
   overflow-y: auto;
   display: flex;
-  flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   opacity: 0;
@@ -198,6 +197,9 @@ textarea {
 }
 
 .bd-menu-cont {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   padding: 72px 24px 40px 16px;
   background-color: #ffffff;
   position: absolute;
@@ -236,7 +238,6 @@ textarea {
   display: flex;
   font-size: 700;
   flex-direction: column;
-  margin-bottom: 168px;
 }
 
 .bd-menu-cont .page-menu .link {
@@ -249,7 +250,9 @@ textarea {
 }
 
 .bd-menu-cont .contacts {
-  margin-bottom: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
   font-family: inherit;
   font-size: 20px;
   font-weight: 500;
@@ -265,8 +268,11 @@ textarea {
 
 /*1sec*/
 .first-section {
+  display: flex;
+  justify-content: center;
+  align-content: center;
   margin: 0 auto;
-  padding: 72px 52px;
+  padding: 72px 0;
   /*Background*/
   background-image: linear-gradient(
       to bottom,
@@ -281,9 +287,22 @@ textarea {
   background-position: center;
 }
 
+/*Background 192dpi*/
+@media (min-resolution: 192dpi) {
+  .first-section {
+    background-image: linear-gradient(
+        to bottom,
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url(../images/people-office@2x.jpg);
+  }
+}
+
 .first-section .container {
   /*Align*/
   display: flex;
+  padding: 0 52px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -294,8 +313,8 @@ textarea {
 .first-section .page-title {
   color: #ffffff;
   font-weight: 700;
-  font-size: 56px;
-  line-height: 1.07;
+  font-size: 36px;
+  line-height: 1.11;
   letter-spacing: 0.02em;
   max-width: 496px;
   margin: 0 auto;
@@ -342,7 +361,14 @@ textarea {
 /*2sec*/
 .section-about {
   margin: 0 auto;
-  padding: 96px 16px;
+  padding: 96px 0;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.section-about .container {
+  padding: 0 16px;
 }
 
 .adv-list {
@@ -379,7 +405,7 @@ textarea {
   font-family: inherit;
   font-size: 36px;
   font-weight: 700;
-  line-height: 40px;
+  line-height: 1.11;
   letter-spacing: 0.02em;
 }
 
@@ -387,18 +413,22 @@ textarea {
   font-family: inherit;
   font-size: 16px;
   font-weight: 500;
-  line-height: 24px;
+  line-height: 1.5;
   letter-spacing: 0.02em;
 }
 
 /*3sec*/
 .third-section {
+  display: flex;
+  justify-content: center;
+  align-content: center;
   background-color: #f4f4fd;
   margin: 0 auto;
-  padding: 96px 28px;
+  padding: 96px 0;
 }
 
 .third-section .container {
+  padding: 0 28px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -444,6 +474,7 @@ textarea {
 
 .team-member .container .main-text {
   text-align: center;
+  font-weight: 400;
 }
 
 .team-member .social-links {
@@ -477,11 +508,15 @@ textarea {
 
 /*4sec*/
 .portfolio-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 0 auto;
-  padding: 96px 16px;
+  padding: 96px 0;
 }
 
 .portfolio-section .container {
+  padding: 0 16px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -558,10 +593,11 @@ textarea {
 .footer-page {
   background-color: #2e2f42;
   display: flex;
-  padding: 96px 16px;
+  padding: 96px 0;
 }
 
 .footer-page .container {
+  padding: 0 16px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -572,6 +608,7 @@ textarea {
 .footer-page .footer-cont {
   display: flex;
   flex-direction: column;
+  gap: 16px;
   justify-content: center;
   align-items: center;
 }
@@ -754,11 +791,12 @@ textarea {
     0px 2px 1px 0px #00000033;
   top: 50%;
   left: 50%;
-  overflow-y: auto;
+  overflow-y: hidden;
   transform: translate(-50%, -50%);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   width: calc(100% - 32px);
-  height: calc(100% - 18px);
+  height: 100%;
+  max-height: 623px;
 }
 
 .close-btn {
@@ -1002,8 +1040,6 @@ input[type="checkbox"]:checked + .priv-label .priv-span {
   }
   /*Header*/
   .page-header {
-    display: flex;
-    justify-content: space-between;
     padding: 0;
     width: 100%;
   }
@@ -1050,20 +1086,26 @@ input[type="checkbox"]:checked + .priv-label .priv-span {
   }
   /*1sec*/
   .first-section {
-    padding: 112px 136px;
+    padding: 112px 0;
   }
 
   .first-section .container {
+    padding: 0 136px;
     gap: 36px;
   }
 
+  .first-section .page-title {
+    font-size: 56px;
+    line-height: 1.07;
+  }
   /*2 section*/
   .section-about {
-    padding: 96px 16px;
+    padding: 96px 0;
     max-width: 768;
   }
 
   .section-about .container {
+    padding: 0 16px;
     justify-content: center;
     align-items: center;
   }
@@ -1095,7 +1137,11 @@ input[type="checkbox"]:checked + .priv-label .priv-span {
 
   /*3d sect*/
   .third-section {
-    padding: 96px 108px;
+    padding: 96px 0;
+  }
+
+  .third-section .container {
+    padding: 0 108px;
   }
 
   .team-list {
@@ -1112,9 +1158,17 @@ input[type="checkbox"]:checked + .priv-label .priv-span {
     flex-basis: calc((100% - 24px) / 2);
   }
 
+  .team-member .container {
+    padding: 32px 16px;
+  }
+
   /*4th sect*/
   .portfolio-section {
-    padding: 96px 16px;
+    padding: 96px 0;
+  }
+
+  .portfolio-section .container {
+    padding: 0;
   }
 
   .portfolio-list {
@@ -1131,12 +1185,19 @@ input[type="checkbox"]:checked + .priv-label .priv-span {
     flex-basis: calc((100% - 24px) / 2);
   }
 
+  .port-item .container {
+    padding-top: 32px;
+    padding-bottom: 32px;
+    padding-left: 16px;
+  }
+
   /*footer*/
   .footer-page {
-    padding: 96px 164px 96px 108px;
+    padding: 96px 0;
   }
 
   .footer-page .container {
+    padding-left: 108px;
     justify-content: flex-start;
     align-items: flex-start;
     flex-direction: row;
@@ -1144,8 +1205,9 @@ input[type="checkbox"]:checked + .priv-label .priv-span {
     gap: 0;
   }
 
-  .footer-cont {
+  .footer-page .footer-cont {
     flex-direction: column;
+    align-items: flex-start;
     margin-bottom: 72px;
     margin-right: 24px;
     gap: 16px;
@@ -1194,22 +1256,23 @@ input[type="checkbox"]:checked + .priv-label .priv-span {
   }
   /*Header*/
   .page-header {
-    display: flex;
     border-bottom: 1px solid #e7e9fc;
     margin: 0 auto;
-    padding: 24px 156px;
+    padding: 24px 0;
     width: 100%;
   }
 
   .page-header .container {
-    margin: 0;
+    justify-content: space-between;
+    margin: 0 auto;
     padding: 0;
+    width: 100%;
   }
 
   .page-nav {
     display: flex;
     align-items: center;
-    margin-right: 332px;
+    margin-right: auto;
   }
 
   .page-menu {
@@ -1244,19 +1307,25 @@ input[type="checkbox"]:checked + .priv-label .priv-span {
 
   /*1sec*/
   .first-section {
-    padding: 188px 472px;
+    padding: 188px 0;
   }
 
   .first-section .container {
+    padding: 0 472px;
     gap: 48px;
   }
 
+  .first-section .page-title {
+    font-size: 56px;
+    line-height: 1.07;
+  }
   /*2 section*/
   .section-about {
-    padding: 120px 156px;
+    padding: 120px 0;
   }
 
   .section-about .container {
+    padding: 0;
     justify-content: center;
     align-items: center;
   }
@@ -1301,7 +1370,12 @@ input[type="checkbox"]:checked + .priv-label .priv-span {
 
   /*3d sect*/
   .third-section {
-    padding: 120px 156px;
+    padding: 120px 0;
+  }
+
+  .third-section .container {
+    justify-content: center;
+    padding: 0;
   }
 
   .team-list {
@@ -1316,9 +1390,17 @@ input[type="checkbox"]:checked + .priv-label .priv-span {
     flex-basis: calc((100% - 3 * 24px) / 4);
   }
 
+  .team-member .container {
+    padding: 32px 0;
+  }
+
   /*4th sect*/
   .portfolio-section {
-    padding: 120px 156px;
+    padding: 120px 0;
+  }
+
+  .portfolio-section .container {
+    padding: 0;
   }
 
   .portfolio-list {
@@ -1335,13 +1417,18 @@ input[type="checkbox"]:checked + .priv-label .priv-span {
     width: calc((100% - 48px) / 3);
   }
 
+  .port-item .container {
+    padding: 32px 16px;
+  }
+
   /*footer*/
   .footer-page {
-    padding: 100px 159px 100px 156px;
+    padding: 100px 0;
+    justify-content: center;
   }
 
   .footer-page .container {
-    justify-content: flex-start;
+    padding: 0;
     align-items: baseline;
     flex-direction: row;
     gap: 0;
@@ -1351,12 +1438,13 @@ input[type="checkbox"]:checked + .priv-label .priv-span {
     flex-direction: column;
     align-items: flex-start;
     margin-right: 120px;
-    gap: 16px;
     width: 264px;
+    max-height: 112px;
   }
 
   .advice {
     height: 72px;
+    width: 100%;
   }
 
   .footer-page .soclink-cont {
@@ -1370,6 +1458,7 @@ input[type="checkbox"]:checked + .priv-label .priv-span {
 
   .sub-form {
     flex-direction: row;
+    gap: 0;
   }
 
   .sub-inp {
